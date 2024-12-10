@@ -57,6 +57,7 @@ class App extends Component {
 
   render() {
     const { city, weatherData, unit, favorites } = this.state;
+    const isMetric = unit === 'metric';
 
     return (
       <div className="weather-dashboard">
@@ -77,7 +78,7 @@ class App extends Component {
         <div className="favorites">
           <h3>Favorite Cities:</h3>
           {favorites.length === 0 ? (
-            <p>No favorite cities yet.</p>
+            <p>No favorite cities added.</p>
           ) : (
             <ul>
               {favorites.map((fav, index) => (
@@ -92,14 +93,15 @@ class App extends Component {
         {weatherData && (
           <div className="weather-card">
             <h2>Current Weather in {weatherData.location.name}</h2>
-            <p>Temperature: {weatherData.current.temp_c}°C</p>
-            <p>Humidity: {weatherData.current.humidity}%</p>
-            <p>Wind Speed: {weatherData.current.wind_kph} kmph</p>
-            <p>Condition: {weatherData.current.condition.text}</p>
             <img
               src={weatherData.current.condition.icon}
               alt={weatherData.current.condition.text}
             />
+            <p>Temperature: {isMetric ? weatherData.current.temp_c : weatherData.current.temp_f}°{isMetric ? 'C' : 'F'}</p>
+            <p>Humidity: {weatherData.current.humidity}%</p>
+            <p>Wind Speed: {weatherData.current.wind_kph} kmph</p>
+            <p>Condition: {weatherData.current.condition.text}</p>
+            <p>Time: {weatherData.location.localtime}</p>
             <button onClick={this.addFavorite}>Save to Favorites</button>
           </div>
         )}
