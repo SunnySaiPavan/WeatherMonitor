@@ -1,0 +1,150 @@
+/* General Styles */
+.weather-dashboard {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3;
+}
+
+.weather-card {
+  margin-top: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card img {
+  width: 50px;
+  height: 50px;
+}
+
+.weather-card button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.weather-card button:hover {
+  background-color: #218838;
+}
+
+.favorites {
+  margin-top: 20px;
+}
+
+.favorites ul {
+  list-style: none;
+  padding: 0;
+}
+
+.favorites li {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+  margin: 5px 0;
+}
+
+.favorites li:hover {
+  color: #0056b3;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .weather-dashboard {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-bar input {
+    max-width: 100%;
+  }
+
+  .search-bar button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .weather-card {
+    padding: 15px;
+  }
+
+  .weather-card img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .weather-card button {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar input {
+    font-size: 14px;
+  }
+
+  .search-bar button {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .weather-card {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .weather-card img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .weather-card button {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
